@@ -56,3 +56,15 @@ export class ShoppingCartLegacy {
     this._items.length = 0
   }
 }
+
+
+const shoppingCart = new ShoppingCartLegacy();
+shoppingCart.addItem({ name: 'Tablet', price: 500.00 });
+shoppingCart.addItem({ name: 'Celular', price: 7500.00 });
+shoppingCart.addItem({ name: 'Notebook', price: 8000.00 });
+
+console.log(shoppingCart.items);
+console.log(shoppingCart.total());
+console.log(shoppingCart.orderStatus);
+shoppingCart.checkout();
+console.log(shoppingCart.orderStatus);
