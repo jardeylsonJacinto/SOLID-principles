@@ -57,7 +57,6 @@ export class ShoppingCartLegacy {
   }
 }
 
-
 const shoppingCart = new ShoppingCartLegacy();
 shoppingCart.addItem({ name: 'Tablet', price: 500.00 });
 shoppingCart.addItem({ name: 'Celular', price: 7500.00 });
