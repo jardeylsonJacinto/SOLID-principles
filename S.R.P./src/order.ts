@@ -1,4 +1,5 @@
 import { Messaging } from './messaging'
+import { Persistency } from './persistency'
 import { OrderStatus } from './protocolls/order-status'
 import { ShoppingCart } from './shopping-cart'
 
@@ -8,6 +9,7 @@ export class Order {
   constructor(
     private readonly cart: ShoppingCart,
     private readonly messaging: Messaging,
+    private readonly persistency: Persistency,
   ) {}
 
   get orderStatus(): OrderStatus {
@@ -23,11 +25,7 @@ export class Order {
     this.messaging.sendMessage(
       `Your order with a total of ${this.cart.total} has been received!`,
     )
-    this.saveOrder()
+    this.persistency.saveOrder()
     this.cart.clear()
-  }
-
-  saveOrder(): void {
-    return console.log('Order saved successfuly')
   }
 }

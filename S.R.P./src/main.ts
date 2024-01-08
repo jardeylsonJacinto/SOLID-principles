@@ -1,10 +1,12 @@
 import { Messaging } from './messaging'
 import { Order } from './order'
+import { Persistency } from './persistency'
 import { ShoppingCart } from './shopping-cart'
 
 const shoppingCart = new ShoppingCart()
 const messaging = new Messaging()
-const order = new Order(shoppingCart, messaging)
+const persistency = new Persistency()
+const order = new Order(shoppingCart, messaging, persistency)
 shoppingCart.addItem({ name: 'Tablet', price: 500.0 })
 shoppingCart.addItem({ name: 'Celular', price: 7500.0 })
 shoppingCart.addItem({ name: 'Notebook', price: 8000.0 })
