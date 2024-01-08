@@ -1,4 +1,4 @@
-import { CartItem } from './protocolls/cart-item'
+import { CartItem } from '../entities/protocolls/cart-item'
 
 export class ShoppingCart {
   private readonly _items: CartItem[] = []
