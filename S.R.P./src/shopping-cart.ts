@@ -1,5 +1,5 @@
-type CartItem = { name: string; price: number }
-type OrderStatus = 'open' | 'closed'
+import { CartItem } from './protocolls/cart-item'
+import { OrderStatus } from './protocolls/order-status'
 
 export class ShoppingCart {
   private readonly _items: CartItem[] = []
