@@ -1,10 +1,10 @@
-import { Messaging } from '../services/messaging'
-import { Persistency } from '../services/persistency'
-import { OrderStatus } from '../classes/protocolls/order-status'
-import { ShoppingCart } from './shopping-cart'
+import { OrderStatus } from './protocolls/order-status';
+import { ShoppingCart } from './shopping-cart';
+import { Messaging } from '../services/messaging';
+import { Persistency } from '../services/persistency';
 
 export class Order {
-  private _orderStatus: OrderStatus = 'open'
+  private _orderStatus: OrderStatus = 'open';
 
   constructor(
     private readonly cart: ShoppingCart,
@@ -13,19 +13,20 @@ export class Order {
   ) {}
 
   get orderStatus(): OrderStatus {
-    return this._orderStatus
+    return this._orderStatus;
   }
 
   checkout(): void {
     if (this.cart.isEmpty()) {
-      return console.log('Your cart is empty!')
+      console.log('Seu carrinho está vazio');
+      return;
     }
 
-    this._orderStatus = 'closed'
+    this._orderStatus = 'closed';
     this.messaging.sendMessage(
-      `Your order with a total of ${this.cart.total} has been received!`,
-    )
-    this.persistency.saveOrder()
-    this.cart.clear()
+      `Seu pedido com total de ${this.cart.totalWithDicount()} foi recebido.`,
+    );
+    this.persistency.saveOrder();
+    this.cart.clear();
   }
 }
