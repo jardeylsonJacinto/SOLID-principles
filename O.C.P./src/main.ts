@@ -1,7 +1,7 @@
 import { ShoppingCart } from './classes/shopping-cart';
 import { Order } from './classes/order';
-import { Messaging } from './services/messaging';
-import { Persistency } from './services/persistency';
+import { Messaging } from '../src/services/messaging';
+import { Persistency } from '../src/services/persistency';
 import { Product } from './classes/product';
 import { FiftyPercentDiscount } from './classes/discount';
 

@@ -1,4 +1,4 @@
-import { CartItem } from '../entities/protocolls/cart-item'
+import { CartItem } from './protocols/cart-item'
 
 export class Product implements CartItem {
   constructor(

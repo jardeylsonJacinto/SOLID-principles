@@ -1,4 +1,4 @@
-import { OrderStatus } from './protocolls/order-status';
+import { OrderStatus } from './protocols/order-status';
 import { ShoppingCart } from './shopping-cart';
 import { Messaging } from '../services/messaging';
 import { Persistency } from '../services/persistency';

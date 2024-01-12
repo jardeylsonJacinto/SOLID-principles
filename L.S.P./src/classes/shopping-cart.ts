@@ -1,4 +1,4 @@
-import { CartItem } from "./protocolls/cart-item";
+import { CartItem } from "./protocols/cart-item";
 import { Discount } from "./discount";
 
 export class ShoppingCart {
