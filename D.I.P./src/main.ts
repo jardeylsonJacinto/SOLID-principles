@@ -21,6 +21,7 @@ const enterpriseCustomer = new EnterpriseCustomer(
   'Empresa Gigante',
   '2222222222222222',
 );
+
 const order = new Order(
   shoppingCart,
   messaging,
